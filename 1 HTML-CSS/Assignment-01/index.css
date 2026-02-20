@@ -1,0 +1,55 @@
+body {
+    font-family: "Roboto", sans-serif;
+    font-weight: 800;
+    background: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    padding:  50px 0;
+    margin: 100px 0;
+    border-radius: 20px;
+    text-align: center;
+    margin-top: 100px;
+    align-items: center;
+    gap: 15px;
+   
+}
+
+.topbar{
+    font-family: Roboto Condensed;
+    margin-top: 100px;
+    text-align: center;
+}
+
+.buttonbar{
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    width: 200px;
+    padding: 12px;
+    border: 1px solid rgb(184, 186, 184);
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+
+.buttonbar img{
+     width: 18x;
+    height: 18px;
+}
+
+.footertext{
+    background-color: rgb(241, 249, 249);
+    color: grey;
+    font-family: Montserrat;
+    font-size: 10px;
+    padding: 15px 0;
+    position: fixed;
+    text-align: center;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+
+}
+
+

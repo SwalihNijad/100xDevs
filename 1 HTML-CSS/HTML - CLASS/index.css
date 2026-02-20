@@ -1,0 +1,12 @@
+body {
+    background : linear-gradient(navy,black) ;
+    color: white;
+    font-size: 20px;
+}
+
+.topbar {
+    font-family: Montserrat;
+    background-color: #0d1117;
+    padding: 100px 500px;
+    margin: 200 px;
+}

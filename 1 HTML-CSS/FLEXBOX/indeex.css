@@ -1,0 +1,15 @@
+
+button {
+    background-color: white;
+    color: rgb(0, 0, 0);
+    padding: 10px;
+    cursor: pointer;
+    transition: box-shadow ease 0.3s;
+    border-radius: 10px;
+    font-family: Montserrat;
+
+}
+
+button:hover {
+    box-shadow: 0 0 2px 2px;
+}
