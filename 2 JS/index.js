@@ -42,6 +42,9 @@ for(i=1; i <= 100 ; i++){
 
 //for loop
 
+
+
+
 for(i=0 ; i<5 ; i++){
     console.log(i)
 }
