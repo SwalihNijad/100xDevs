@@ -22,8 +22,24 @@ function FileReadCallback (err, contents){
 fs.readFile("a,txt","utf-8",FileReadCallback);
 
 let s =0
-for (let i = 0 ; i<1000000 ; i++);{
-    s += i
+for (let i = 0 ; i<1000000 ; i++){
+    s = s + i;
 }
 
 console.log(s)
+
+//stop watch 
+let ctr = 0
+function CallBack () {
+    console.log(ctr);
+    ctr = ctr + 1;
+}
+
+setInterval (CallBack, 1000);
+
+let x = 0
+for (let i = 0; i<40 ; i++) { 
+    x = x +i;
+}
+
+console.log(x) 
