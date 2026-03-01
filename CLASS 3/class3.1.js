@@ -34,3 +34,60 @@ const ans = input1.map(function (i){
 console.log(ans)
 
 
+//Filter
+
+//Given an input array , give me all the even values
+//ans
+
+// const arr = [1, 2, 3, 4, 5];
+
+// newArray = []
+// for(let i = 0; i < arr.length; i++){
+//     if (arr[i] % 2 == 0){
+//         newArray.push(arr[i]);
+//     }
+// }
+// console.log(newArray)
+
+//or 
+
+const arr = [1, 2, 3, 4, 5];  //for names to filter
+
+function filterLogic(n){
+    if (n % 2 == 0){          //logic would be startWith("h")
+        return true;
+    } else {
+        return false;
+    }
+}
+
+let answer = arr.filter(filterLogic)
+console.log(answer)
+
+//also directky calling a fn
+
+// const arr1 = [1, 2, 3, 4, 5];
+//  let answer1 = arr.filter(function(m){   
+//     if (m%2 == 0){
+//         return true;
+//     } else {
+//         return false;
+//     }
+//  })
+
+//  console.log(answer1)
+
+
+//Arrow fn :
+
+const arr1 = [1, 2, 3, 4, 5];
+ let answer1 = arr.filter((m) => {   
+    if (m%2 == 0){
+        return true;
+    } else {
+        return false;
+    }
+ })
+
+ console.log(answer1)
+
