@@ -1,6 +1,7 @@
 // Map filter arrow fns
 
-//Map :
+//Maps :
+
 // Q. Given an array , give me back anew array  in which every value is multiplied by 2 [1, 2, 3, 4, 5] to [2, 4, 6, 8, 10]
 
 //without map general solution
