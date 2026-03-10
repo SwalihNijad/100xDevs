@@ -1,10 +1,15 @@
 class shape{
-    constructor(color){
+    constructor(color, depth){
         this.color = color ;
+        this.depth = depth ;
     }
 
     paint() {
         console.log("Painting with the color: " + this.color)
+    }
+
+    area() {            //This we are raising an error if this argument is not passed in below class.
+        throw new Error('The area musut be implemented in subclass')
     }
 }
 
@@ -12,14 +17,18 @@ class shape{
 //extends shape is used to link the shape and these classes
 
 class Rectangle extends shape  {                   
-    constructor(width, height, color){
-        super(color)                     //constructor of class shape
+    constructor(width, height, color, depth){
+        super(color, depth)                     //constructor of class shape
         this.width = width;
         this.height = height ;
     }
 
     area() {
         return this.width * this.height ;
+    }
+
+    volume() {
+        return this.area() * this.depth
     }
 
     perimeter() {
@@ -65,3 +74,17 @@ console.log(c1.area())
 console.log(s1.perimeter())
 console.log(s1.paint())
 console.log(r1.paint())
+
+//Who has more volume
+function whoHasMoreArea(s1, c1){
+    if(s1.volume() > c1.volume())
+    {
+        console.log("First shape has more area")
+    }
+    else
+    {
+        console.log("Second shape has more area")
+    }
+}
+
+whoHasMoreArea(new Rectangle(10, 10 ,10, "red"), new Circle(10, 10, "green")); 
