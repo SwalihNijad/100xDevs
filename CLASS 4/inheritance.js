@@ -61,6 +61,7 @@ class Square extends shape {
 const r1 = new Rectangle(10, 10, "Orange")
 const c1 = new Circle(10 , "Black")
 const s1 = new Square(300, "Red")
-console.log(c1.paint())
+console.log(c1.area())
+console.log(s1.perimeter())
 console.log(s1.paint())
 console.log(r1.paint())
