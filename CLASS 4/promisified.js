@@ -20,8 +20,8 @@ function fsReadFilePromise(filePath, encoding){
     });
 }
 
-fsReadFilePromise("a.txt","utf-8")
-    .then(function(data) {
+fsReadFilePromise("a.txt","utf-8")   //whenever this fncn resolves then or //let p = .....
+    .then(function(data) {           //then call this fncn.              //p.then.....
         console.log(data);
     })
     .catch(function(err) {
@@ -46,4 +46,27 @@ function setTimeoutpromisified(delay){
 setTimeoutpromisified(1000)
     .then (function(){
         console.log("1 second has delayed")
+    })  
+    .catch(function(){
+        console.log("An error occured")
     })
+    .finally(function(){
+        console.log("final after either then or catch ran")
+    })
+
+//Reading and writing promisified fncn
+//fsreadFilepromisified
+//fswriteFilepromisified
+
+function fsReadAndWriteFilePromisified(filePath, encoding){
+    return new Promise(function(resolve, reject){
+        fsReadFilePromisified(filePath, encoding)
+            .then(function(contents){
+                contents = contents.toUpperCase();
+                fsWriteFilePromisified(filePath, contents)
+                resolve()
+        })
+    })
+}
+
+fsReadAndWriteFilePromisified("a.txt","utf-8")
