@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Pirata+One&display=swap');
+
+body {
+    background-color: rgb(237, 229, 249);
+    color: black;
+    font-family: "Pirata One", system-ui;
+    width: auto;
+    padding: 20px;
+    font-size: 35px;
+    margin: 20px;
+    text-align: center;
+    min-height: 100vh;
+}
+
+.topbar{
+    background-color: rgba(61, 217, 9, 0);
+}
+
+.midbar{
+    font-family: "Alumni Sans Pinstripe";
+    font-size: 20px;
+    margin-top: 30px;
+}
+
+.input{
+    padding: 8px;
+    width: 500px;
+    border-radius: 10px;
+    border: 1px solid black ;
+    margin-top: 35px;
+    background-color: rgb(217, 233, 247);
+    
+}
+
+button{
+    padding: 8px;
+    width: 500px;
+    border-radius: 10px;
+    border: 1px solid black ;
+    margin-top: 35px;
+    background-color: rgb(39, 49, 39);
+    color: white;
+}
+
+.footertext{
+    background-color: antiquewhite;
+    color: rgb(0, 0, 0);
+    width: 100%;
+    font-family: "Funnel Display";
+    font-size:  20px;
+    margin-top: 550px;
+    
+
+}
