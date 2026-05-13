@@ -3,13 +3,13 @@
 
 <body>
     <div style="display: flex; justify-content: space-between; padding: 0px 100px;">
-        <div>
+        <div id="notes">
             Loading...
         </div>
 
         <div>
             <input type="text" id="userNote" />
-            <button>Create new todo </button>
+            <button onclick="addTodo()">Create new todo </button>
         </div>
     </div>
 
@@ -39,7 +39,7 @@
 
             // second way axios external dependency have to get from external
             const response = await axios.get("http://localhost:3000/notes")
-            console.log(response.data.notes);
+            const notes = response.data.notes;
 
             document.getElementById("notes").innerHTML = "";
 
@@ -53,5 +53,4 @@
         getTodos();
     </script>
 </body>
-
 </html>
