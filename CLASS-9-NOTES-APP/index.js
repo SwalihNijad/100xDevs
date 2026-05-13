@@ -2,9 +2,12 @@ const express = require("express")
 
 const app = express()
 
+app.use(express.json())
+
 let notes = [];
 
-app.get("/notes", function(req, res){
+//POST - Create a note
+app.post("/notes", function(req, res){
     const note = req.body.note;
     notes.push(note);
 
@@ -13,14 +16,18 @@ app.get("/notes", function(req, res){
     })
 })
 
-app.post("/notes",function(req, res){
+//GET - Get all my notes
+app.get("/notes",function(req, res){
     res.json({
         notes
     })
 })
 
 app.get("/", function(req,res){
-    res.sendFile("/c/Users/VICTUS/Desktop/Swalh Nijad/100xDevs/CLASS-9-NOTES-APP/frontend/index.js")
+    res.sendFile("/Users/VICTUS/Desktop/Swalh Nijad/100xDevs/CLASS-9-NOTES-APP/frontend/index.html")
 })
 
-app.listen(3000)
+app.listen(3000 , function() {
+    console.log("Server running on port 3000");
+    
+})
