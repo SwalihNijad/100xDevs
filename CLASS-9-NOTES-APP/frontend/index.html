@@ -4,7 +4,7 @@
 <body>
     <div style="display: flex; justify-content: space-between; padding: 0px 100px;">
         <div id="notes">
-            Loading...
+            Please sign in!
         </div>
 
         <div>
@@ -12,24 +12,28 @@
             <button onclick="addTodo()">Create new todo </button>
         </div>
     </div>
-
+                                                                                            
 
     <script>
         async function addTodo() {
-                await axios.post("http://localhost:3000/notes", {
-                    note: document.getElementById("userNote").value
-                })
+            await axios.post("http://localhost:3000/notes", {
+                note: document.getElementById("userNote").value
+            },{
+                headers: {
+                    token: localStorage.getItem("token")
+                }
+            })
 
-                // show the todo in the frontend
-                const newNode = document.createElement("div");
+            // show the todo in the frontend
+            const newNode = document.createElement("div");
 
-                newNode.innerHTML = document.getElementById("userNote").value;
-                newNode.setAttribute("style", "border: 2px solid black; padding: 10px;")
-                document.getElementById("notes").appendChild(newNode);
-                
-                // make the input box empty again
-                document.getElementById("userNote").value = "";
-            }
+            newNode.innerHTML = document.getElementById("userNote").value;
+            newNode.setAttribute("style", "border: 2px solid black; padding: 10px;")
+            document.getElementById("notes").appendChild(newNode);
+
+            // make the input box empty again
+            document.getElementById("userNote").value = "";
+        }
 
         async function getTodos() {
             //internal already built in 
@@ -38,7 +42,11 @@
             // console.log(json.notes);
 
             // second way axios external dependency have to get from external
-            const response = await axios.get("http://localhost:3000/notes")
+            const response = await axios.get("http://localhost:3000/notes",{
+                headers:{
+                        token: localStorage.getItem("token")
+                }
+            })
             const notes = response.data.notes;
 
             document.getElementById("notes").innerHTML = "";
@@ -53,4 +61,5 @@
         getTodos();
     </script>
 </body>
+
 </html>
