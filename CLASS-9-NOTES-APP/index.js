@@ -1,29 +1,30 @@
 const express = require("express")
-const jwt = require("jsonwebtoken")
-const { authMiddleware } = require("./authMiddleware")
+const jwt = require("jsonwebtoken");
+const { authMiddleware } = require("./middleware");
 
 const app = express();
 app.use(express.json());
 
 let notes = [];
 let users = [{
-    username : "Harkirat",
+    username : "Salman",
     password : "123123"
 }]
 
 app.post("/signup", function(req,res) {
     const username = req.body.username;
     const password = req.body.password;
+    const userExists = users.find(user => user.username === username);
 
     if(userExists){
-        res.status(404).json({
+        return res.status(403).json({
             message: "User with this username already exists"
         })
     }
 
     users.push({
-        username = username,
-        password = password
+        username: username,
+        password: password
     })
 
     res.json({
@@ -33,12 +34,12 @@ app.post("/signup", function(req,res) {
 
 app.post("/signin", function(req,res) {
     const username = req.body.username;
-    const password = req.body.username;
+    const password = req.body.password;
 
-    const userExists = username.find(user => user.username === username && user.password === password);
+    const userExists = users.find(user => user.username === username && user.password === password);
 
     if(!userExists){
-        res.status(404).json({
+        res.status(403).json({
             message: "Incorrect credentials"
         })
         return;
@@ -47,7 +48,7 @@ app.post("/signin", function(req,res) {
     // json web tokens
     const token = jwt.sign({
         username: username
-    }, "Harkirat123")
+    }, "Najah");
 
     res.json({
         token : token
@@ -91,4 +92,4 @@ app.get("/signin", function(req,res){
 app.listen(3000 , function() {
     console.log("Server running on port 3000");
     
-})
+})  
