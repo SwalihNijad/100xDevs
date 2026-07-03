@@ -85,5 +85,107 @@ app.post("/add-member-to-organization", authMiddleware, (req, res) => {
         })
         return
     }
+
+    const memberuser = USERS.find(u => u.username == memerUserUsername)
+
+    if(!memberuser){
+        res.status(411).json({
+            message: "No user with this username exists in our db"
+        })
+        return
+    }
+
+    organization.members.push(memberuser.id);
+
+    res.json({
+        message: "New member added!"
+    })
 })
 
+app.post("/board", (req, res) => {
+    
+})
+
+app.post("/issue", (req, res) => {
+    
+})
+
+//GET ENDPOINTS 
+app.get("/organization",authMiddleware,(req,res) => {
+    const userId = req.userId;
+    const organizationId = parseInt(req.query.organizationId); // "1"
+
+    const organization = ORGANIZATIONS.find(org => org.id === organizationId);
+
+    console.log(organization);
+    console.log(userId);
+    if (!organization || organization.admin !== userId) {
+        res.status(411).json({
+            message: "Either this org doesnt exist or you are not an admin of this org"
+        })
+        return
+    }
+     res.json({
+        organization: {
+            ...organization,
+            members: organization.members.map(memberId => {
+                const user = USERS.find(user => user.id === memberId);
+                return {
+                    id: user.id,
+                    username: user.username
+                }
+            })
+        }
+    })
+})
+
+app.get("/boards", (req, res) => {
+
+    
+})
+
+app.get("/issues", (req, res) => {
+    
+})
+
+app.get("/members", (req, res) => {
+
+})
+
+// UPDATE
+app.put("/issues", (req, res) => {
+
+})
+
+//DELETE -- FIND THE GBUG and fix it
+app.delete("/members", authMiddleware, (req, res) => {
+    const userId = req.userId;
+    const organizationId = req.body.organizationId;
+    const memerUserUsername = req.body.memberUserUsername;
+
+    const organization = ORGANIZATIONS.find(org => org.id === organizationId);
+
+    if (!organization || organization.admin !== userId) {
+        res.status(411).json({
+            message: "Either this org doesnt exist or you are not an admin of this org"
+        })
+        return
+    }
+
+    const memberUser = USERS.find(u => u.username === memerUserUsername);
+
+    if (!memberUser) {
+        res.status(411).json({
+            message: "No user with this username exists in our db"
+        })
+        return
+    }
+
+    organization.members = organization.members.filter(user => user.id !== memberUser.id);
+
+    res.json({
+        message: "member deleted!"
+    })
+})
+
+app.listen(3000);
