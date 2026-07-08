@@ -53,7 +53,7 @@
 
             for (let i = 0; i < notes.length; i++) {
                 const noteNote = document.createElement("div");
-                noteNote.innerHTML = notes[i];
+                noteNote.innerHTML = notes[i].note;
                 noteNote.setAttribute("style", "border: 2px solid black; padding: 10px;")
                 document.getElementById("notes").appendChild(noteNote);
             }
