@@ -60,7 +60,11 @@ app.post("/notes", authMiddleware , function(req, res){
 
     const username = req.username;
     const note = req.body.note;
-    notes.push(note, username);
+    
+    notes.push({
+        note: note,
+        username: username
+    });
 
     res.json({
         message : "Done!"
@@ -73,7 +77,7 @@ app.get("/notes", authMiddleware ,function(req, res){
     const userNotes = notes.filter(note => note.username == username);
 
     res.json({
-        notes
+        notes: userNotes
     })
 })
 
