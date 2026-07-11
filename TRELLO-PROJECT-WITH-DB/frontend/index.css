@@ -1,0 +1,33 @@
+body {
+    font-family: cursive;
+    font-weight: 800;
+    background: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    padding:  50px 0;
+    margin: 100px 0;
+    border-radius: 10px;
+    text-align: center;
+    margin-top: 100px;
+    align-items: center;
+    gap: 15px;
+   
+}
+
+.topbar{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-top: 100px;
+}
+
+.input{
+    background-color: rgba(210, 217, 222, 0.903);
+    color: rgb(5, 1, 20);
+    padding: 10px;
+    border-radius: 15px;
+    border: 1px solid rgb(184, 186, 184);
+}
+
+.buttonbar{
+    padding: 5px;
+    margin-top: 25px;
+    border-radius: 10px;
+}
