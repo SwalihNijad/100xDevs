@@ -3,8 +3,6 @@ const jwt = require("jsonwebtoken");
 const { authMiddleware } = require("./middleware");
 const { organizationModel, userModel, boardModel, issueModel } = require("./models")
 
-
-
 const app = express();
 app.use(express.json());
 
@@ -203,8 +201,6 @@ app.post("/issues", authMiddleware, async (req, res) => {
         id: newIssue._id
     })
 })
-
-
 
 //GET ENDPOINTS 
 app.get("/organizations", authMiddleware, async (req, res) => {
