@@ -1,11 +1,12 @@
 const jwt = require("jsonwebtoken");
 
 function authMiddleware(req, res, next) {
-    const token = req.headers.token; // jwt
-    const decoded = jwt.verify(token, "Nijad123");
-    const userId = decoded.userId;
+
+    const token = req.headers.token; // jwt  takes thet token fromm headers
+    const decoded = jwt.verify(token, "Nijad123"); //verifies it
+    const userId = decoded.userId;  //checks wheather the user id has same token
     if (userId) {
-        req.userId = userId;
+        req.userId = userId;    //if yes then go further else no
         next();
     } else {
         res.status(403).json({
