@@ -6,7 +6,7 @@ const { organizationModel, userModel, boardModel, issueModel } = require("./mode
 const app = express();
 app.use(express.json());
 
-//CREATE
+//CREATE ENDPOINTS
 
 app.post("/signup", async (req, res) => {
     const username = req.body.username;
