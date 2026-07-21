@@ -1,5 +1,5 @@
 const express = require("express")
-const { pool } = require('pg')
+const { Pool } = require('pg')
 
 const pool = new Pool({
     connectionString: "postgresql://neondb_owner:npg_QasvduKy9pf3@ep-raspy-wind-awuf0ip2-pooler.c-12.us-east-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require"
@@ -40,4 +40,6 @@ app.post("/signin", async(req, res) => {
     }
 })
 
-app.listen(3000)
+app.listen(3000, function() {
+    console.log("Server running on port 3000");
+});
