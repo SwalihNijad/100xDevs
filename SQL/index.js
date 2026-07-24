@@ -31,7 +31,7 @@ app.post("/signup", async (req, res) => {
 
     const hashedPassword = await bcrypt.hash(password, 10)
 
-    const response = await pool.query(`INSERT INTO users(username, email, password) VALUES ($1, $2, $3)RETURNING id;`, [username, email, password])
+    const response = await pool.query(`INSERT INTO users(username, email, password) VALUES ($1, $2, $3)RETURNING id;`, [username, email, hashedPassword])
 
     res.json({
         message: "Signup done!",
