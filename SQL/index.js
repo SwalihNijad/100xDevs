@@ -4,7 +4,7 @@ const bcrypt = require("bcrypt");
 const z = require("zod");
 
 const pool = new Pool({
-    connectionString: "postgresql://neondb_owner:npg_QasvduKy9pf3@ep-raspy-wind-awuf0ip2-pooler.c-12.us-east-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require"
+    connectionString: "" //password
 })
 
 const app = express();
