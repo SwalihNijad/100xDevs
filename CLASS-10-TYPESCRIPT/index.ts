@@ -35,5 +35,51 @@ function z() {
 
 delayedCall(() =>  {})
 
+//Endpoints be like
+
+import express from "express"
+
+const app = express();
+app.use(express.json());
+
+interface UserInput {
+    username: string,
+    password: string
+}
+
+app.post("/signup",(req:Request, res:any) => {
+    const body: UserInput = req.body
+
+    res.json({
+        message: "Signed Up"
+    })
+})
+
+app.listen(3000);
+
+//Interface
+
+interface user {
+    firstName: string;
+    lastName: string;
+    email: string;
+    age: number;
+}
+
+function isLegal(user: user): boolean {
+    if(user.age >18){
+        return true
+    }
+    return false;
+}
+
+let user1: user = {
+    firstName: "Swalih",
+    lastName: "Nijad",
+    email: "Swalih1232@gmami.com",
+    age: 19
+}
+
+console.log(isLegal(user1));
 
 
