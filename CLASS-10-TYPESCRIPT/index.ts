@@ -37,7 +37,9 @@ delayedCall(() =>  {})
 
 //Endpoints be like
 
-import express from "express"
+
+import express from "express";
+import type { Request, Response } from "express";
 
 const app = express();
 app.use(express.json());
@@ -47,7 +49,7 @@ interface UserInput {
     password: string
 }
 
-app.post("/signup",(req:Request, res:any) => {
+app.post("/signup",(req:Request, res:Response) => {
     const body: UserInput = req.body
 
     res.json({
@@ -58,7 +60,6 @@ app.post("/signup",(req:Request, res:any) => {
 app.listen(3000);
 
 //Interface
-
 interface user {
     firstName: string;
     lastName: string;
@@ -83,3 +84,20 @@ let user1: user = {
 console.log(isLegal(user1));
 
 
+//Import Export
+
+
+// export->
+
+// const UserModel = mongoose.model("user",userSchema);
+// export default UserModel
+
+//import ->
+
+// import UserModel from "./models";
+
+//export
+//export const UserModel = mongoose.model("user",userSchema);
+
+//importt
+//const { UserModel }  = mongoose.model("user",userSchema);
