@@ -101,3 +101,33 @@ console.log(isLegal(user1));
 
 //importt
 //const { UserModel }  = mongoose.model("user",userSchema);
+
+
+//Enum
+
+enum Direction {
+    Up,
+    Down,
+    Right,
+    Left
+}
+
+function doSomething(keypressed: Direction) {
+    if(keypressed == Direction.Up){
+
+    }
+}
+
+doSomething(Direction.Up)
+doSomething(Direction.Down)
+
+//Generics
+
+function identity<T> (arg: T){
+    return arg;
+}
+
+let output1 = identity<string>("mystring");
+let output2 = identity<number>(100);
+
+output1.toUpperCase();
