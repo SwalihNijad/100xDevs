@@ -18,11 +18,34 @@ function App() {
           </div>
         </div>
       </div>
+
+      <div>
+        <h1>
+          Linkedin!!!
+        </h1>
+        <Post name="Nijad" content="Hi am youtuber" />
+        <Post name="Aman" content="Hi am Topper" />
+        <Post name="John" content="Hi am Player" />
+      </div>
     </div>
+
+
   )
 }
 
 const style = { width: 400, backgroundColor: "white", borderWidth: 1,borderRadius:10, padding:10, paddingBottom: 150 }
+
+
+function Post(props){
+  return <div style={{ margin: 20, borderRadius: 20, border: "1px solid black", padding: 20, textAlign: "center" }}>
+    <div>
+      <b>{props.name}</b>
+    </div>
+    <div>
+      <b>{props.content}</b>
+    </div>
+  </div>
+}
 
 function PostComponent() {
   return <div style={style}>
