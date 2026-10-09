@@ -9,6 +9,10 @@ export function Auth() {
         <div style={{flex: 6}}>
             <AuthCredentials />
         </div>
+
+
+        <div>hey there</div>
+        <div>This is test code</div>
         
     </div>
 }
