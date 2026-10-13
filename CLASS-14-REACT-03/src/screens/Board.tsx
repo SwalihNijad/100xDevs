@@ -39,8 +39,6 @@ export function Board() {
 
                
             </div>
-
-            <div>This is a test code i have written inside the div tag</div>
         </div>
     );
 }
