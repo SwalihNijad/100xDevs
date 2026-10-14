@@ -10,12 +10,6 @@ export function Auth() {
             <AuthCredentials />
         </div>
 
-
-        <div>hey there</div>
-        <div>This is test code</div>
-
-        <div>This is second test</div>
-        <div>supart of this one</div>
         
     </div>
 }
