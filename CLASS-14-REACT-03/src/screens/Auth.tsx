@@ -9,7 +9,7 @@ export function Auth() {
         <div style={{flex: 6}}>
             <AuthCredentials />
         </div>
-
+ 
         
     </div>
 }
