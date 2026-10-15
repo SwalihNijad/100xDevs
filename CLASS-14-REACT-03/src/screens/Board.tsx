@@ -13,6 +13,14 @@ export function Board() {
     return (
         <div>
             <Appbar />
+            <BoardsSection>
+                console.log(item) => {
+                    console.log(item);
+                    setPendingTasks(p => p.filter(x => x.id != item.id));
+                }
+            </BoardsSection>
+
+
             <div style={{ display: "flex", padding: 30 }}>
                 <BoardsSection>
                     {pendingTasks.map(task => <Card
